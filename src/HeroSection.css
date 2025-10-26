@@ -119,11 +119,9 @@
 /* Mobilni uređaji */
 @media (max-width: 768px) {
   .hero-container {
-    height: 80vh;
+    height: 50vh;
   }
-.hero-container{
-  height: 40vh;
-}
+
   .home-title {
     font-size: 4rem;
     margin-bottom: 20px;
