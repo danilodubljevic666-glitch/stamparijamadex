@@ -1,0 +1,148 @@
+/* Osnovno */
+.gallery-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  opacity: 0;                 /* start hidden for animation */
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+
+/* Kada je u viewportu, dodaj vidljivost */
+.gallery-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Naslov */
+.portfolio-title {
+  font-size: 1.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Filter dugmad: default kao fleks */
+.filter-buttons {
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  background: #f0f0f0;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button:focus {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.filter-buttons button.active {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.22);
+}
+
+/* Grid layout */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 0.8rem;
+}
+
+/* Card i efekt hover */
+.image-card {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+  background: #fff;
+}
+
+.image-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 420ms ease;
+}
+
+.image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.image-card:hover img {
+  transform: scale(1.04);
+}
+
+/* fallback text */
+.no-images {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* RESPONSIVE: mobilni uređaji (<= 425px) */
+@media (max-width: 425px) {
+  .gallery-container {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .portfolio-title {
+    font-size: 1.4rem;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .filter-buttons button {
+    width: calc(100% - 20px);
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .image-card img {
+    height: 140px;
+  }
+}
+
+/* MEDIUM: tablet */
+@media (min-width: 426px) and (max-width: 900px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .image-card img {
+    height: 180px;
+  }
+}
+
+/* ADDITIONAL: reduce motion for users that prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-container,
+  .image-card,
+  .image-card img {
+    transition: none !important;
+  }
+}

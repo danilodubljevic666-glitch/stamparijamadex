@@ -1,0 +1,76 @@
+.future-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 40vh;
+    width: 100%;
+    padding: none;
+    margin: none;
+}
+.section-one{
+    /*trebace ti ovo da izmjenis*/
+    padding-top: 50px;
+    position: relative;
+    width: 100%;
+    background-color:  rgb(10, 175, 120);
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+.section-two{
+    
+       padding-top: 50px;
+    position: relative;
+    width: 100%;
+    background-color:  rgb(69, 69, 69);
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+.section-three{
+       padding-top: 50px;
+    position: relative;
+    width: 100%;
+    background-color:  rgb(10, 175, 120);
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+.time-back{
+    margin-bottom: 10px;
+    scale: 5;
+}
+.target{
+     margin-bottom: 10px;
+     scale: 5;
+}
+.vision{
+     margin-bottom: 10px;
+       scale: 5;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 1024px) {
+  .future-container{
+    display: flex;
+    flex-direction: column;
+    
+   margin-bottom: 300px;
+  }
+  p{
+   font-size: 0.9rem;
+  }
+  .welcome-section-paragraph{
+     margin-left: 30px;
+   margin-right: 30px;
+    font-size: 1rem;
+}
+}

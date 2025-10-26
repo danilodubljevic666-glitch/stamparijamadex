@@ -1,0 +1,85 @@
+.statistics-container {
+    width: 100%;
+    height: auto;
+    background-color: rgb(10, 175, 120);
+    display: flex;
+    flex-direction: column; /* default = mobile */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.statistics-components {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-top: 30px; /* lepo razdvoji elemente na manjim ekranima */
+}
+
+.statistics-icons {
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 2rem; /* mobile default */
+    border-radius: 50px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.stat-title {
+    color: white;
+    font-family: sans-serif;
+    font-size: 2.2rem; /* mobile default */
+}
+
+.stat-about {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+
+/* TABLET / DESKTOP */
+@media (min-width: 426px) {
+    .statistics-container {
+        flex-direction: row;
+        height: 50vh;
+    }
+
+    .statistics-components {
+        padding-top: 0;
+    }
+
+    .statistics-icons {
+        font-size: 50px;
+    }
+
+    .stat-title {
+        font-size: 4rem;
+    }
+
+    .stat-about {
+        font-size: 1.5rem;
+    }
+}
+@media (min-width:429px){
+     .statistics-container {
+        display: flex;
+       flex-direction: column;
+       height: auto;
+       padding-top: 30px; ;
+    }
+}
+/* Tablet specifično ako želiš dodatno prilagoditi */
+@media (min-width: 767px) and (max-width: 1024px) {
+    .statistics-container {
+       flex-direction: column;
+       height: auto;
+    }
+}
+@media (min-width: 1024px) {
+    .statistics-container {
+        flex-direction: row;
+        height: 50vh;
+    }
+}

@@ -1,0 +1,30 @@
+.location-container{
+ 
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-60);
+    transition: ease-in 0.6s;
+}
+iframe{
+    position: relative;
+    width: 80%;
+}
+
+.location-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.location-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

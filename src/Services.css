@@ -1,0 +1,111 @@
+/* 🟢 Osnovni stilovi — MOBILE (do 768px) */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  height: auto;
+  font-family: sans-serif;
+  
+
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.services-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-container.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.services-title {
+  margin-top: 100px;
+  font-size: 3rem;
+  color: rgb(10, 175, 120);
+}
+
+.services-about {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column; /* ✅ mobile default = column */
+  align-items: center;
+  justify-content: center;
+}
+
+.services-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.services-properties {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(10, 175, 120);
+  margin-bottom: 25px;
+}
+
+.services-icon {
+  border: 1px solid rgb(10, 175, 120);
+  padding: 10px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+
+/* 🟡 TABLET — od 769px do 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-list {
+    flex-direction: row; /* ✅ tablet = row */
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 30px;
+  }
+
+  .services-container {
+    margin-top: -200px;
+    margin-bottom: 200px;
+  }
+
+  .services-title {
+    font-size: 4rem;
+  }
+
+  .services-about {
+    font-size: 1.3rem;
+    margin-bottom: 100px;
+  }
+}
+
+
+/* 🔵 DESKTOP — preko 1024px */
+@media (min-width: 1025px) {
+  .services-list {
+    flex-direction: row; /* ✅ desktop = row */
+    justify-content: space-evenly;
+  }
+
+  .services-container {
+    margin-top: 0;
+    margin-bottom: 200px;
+    height: 70vh;
+  }
+}

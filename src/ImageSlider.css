@@ -1,0 +1,111 @@
+/* ImageSlider.css - very simple styles */
+
+.slider {
+ 
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  background: #fff;
+  margin-bottom: 150px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.45s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 480px; /* prilagodi po potrebi */
+  object-fit: cover;
+  display: block;
+}
+
+/* Nav buttons (over image) */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: 0.15s ease, transform 0.12s ease;
+}
+
+.nav-btn:active { transform: translateY(-50%) scale(0.96); }
+.nav-btn:hover { background: rgba(0,0,0,0.6); }
+
+.nav-left { left: 12px; }
+.nav-right { right: 12px; }
+
+/* Responsive */
+
+@media (max-width:1024px){
+  .slider{
+    width: 80%;
+  }
+}
+@media (max-width:425px){
+  .slider{width: 80%;}
+}
+@media (max-width:375px){
+  .slider{width: 80%;}
+}
+@media (max-width:320px){
+  .slider{width: 80%;}
+}
+
+
+@media (max-width: 768px) {
+  .slide img { height: 300px; }
+  .nav-btn { width: 38px; height: 38px; font-size: 22px; }
+}
+/* ✨ Animacija pri pojavljivanju */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+/* ✨ Dodatni efekti na slikama */
+.slide img {
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+

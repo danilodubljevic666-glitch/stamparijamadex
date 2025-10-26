@@ -1,0 +1,114 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* spriječi horizontalni scroll */
+}
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  background: linear-gradient(
+    312deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(111, 232, 162, 1) 50%,
+    rgba(0, 148, 123, 1) 100%
+   
+  );
+   width:100%;
+}
+
+/* Logo */
+.Logo-name {
+  font-size: 2rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Lista linkova */
+.list-items {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+li {
+  transition: ease-in 0.2s;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  scale: 1.05;
+}
+
+/* -------------------- */
+/*  RESPONSIVE DIO  */
+/* -------------------- */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Animacija hamburger ikone */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Sakrij meni na malim ekranima */
+@media (max-width: 768px) {
+  .list-items {
+    position: absolute;
+    top: 70px;
+   width: 100px;
+    background: linear-gradient(
+      312deg,
+      rgba(42, 123, 155, 1) 0%,
+      rgba(111, 232, 162, 1) 50%,
+      rgba(0, 148, 123, 1) 100%
+    );
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+    display: none;
+  }
+
+  .list-items.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
