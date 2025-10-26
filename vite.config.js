@@ -12,5 +12,5 @@ export default defineConfig({
     ]
 
   },
-  base:"/stamparijamadex",
+  base:process.env.VITE_BASE_PATH || "/stamparijamadex",
 })
